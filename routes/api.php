@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ConsultZipCodeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +18,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return response()->json(['status' => 'API is working!']);
 });
+
+Route::post('/zip', [ConsultZipCodeController::class, 'index']);
