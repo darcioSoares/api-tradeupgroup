@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ConsultZipCodeController;
+use App\Http\Controllers\ConsultDistanceAndValueController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +21,5 @@ Route::get('/', function () {
 });
 
 Route::post('/zip', [ConsultZipCodeController::class, 'index']);
+
+Route::post('/distance-value', [ConsultDistanceAndValueController::class, 'index']);
