@@ -27,11 +27,11 @@ GOOGLE_MAPS_API_KEY=AIzaSyAelHWMczMbxGAHdMcJM00sNrP3VKaU4gc
 
 ## 🛠️ Tecnologias Utilizadas
 
-- **PHP 8.2+**
+- **PHP 8.3+**
 - **Laravel 10**
 - **Composer**
-- **Viacep API** (exemplo de integração para serviços externos)
-- **Google Maps API** (exemplo de integração para serviços externos)
+- **Viacep API** (API mais simples somente para CEP)
+- **Google Maps API** (API mais completa trazendo a geolocalização)
 
 ---
 
@@ -45,6 +45,73 @@ A estrutura do projeto foi organizada com os seguintes objetivos:
 
 ---
 # API Documentation
+
+## API /api/zip
+Endpoint: Consultar CEP
+Este endpoint permite consultar informações relacionadas a um CEP.
+
+URL: /api/zip
+
+Método HTTP: POST
+
+Formato de Entrada: JSON
+
+Formato de Saída: JSON
+
+Autenticação: Não é necessária.
+
+Exemplo de Requisição
+http
+Copiar código
+POST /api/zip HTTP/1.1
+Host: 127.0.0.1:8000
+Content-Type: application/json
+Accept: application/json
+Body:
+
+json
+Copiar código
+{
+    "cep": "23086780"
+}
+
+
+## API /api/distance-value
+Endpoint: Calcular Distância entre CEPs
+Este endpoint permite calcular a distância entre dois CEPs.
+
+URL: /api/distance-value
+
+Método HTTP: POST
+
+Formato de Entrada: JSON
+
+Formato de Saída: JSON
+
+Autenticação: Não é necessária.
+
+Exemplo de Requisição
+http
+Copiar código
+POST /api/distance-value HTTP/1.1
+Host: 127.0.0.1:8000
+Content-Type: application/json
+Accept: application/json
+Body:
+
+json
+Copiar código
+{
+    "cep_origin": "09866170",
+    "cep_destination": "08664147"
+}
+
+
+
+
+
+
+
 
 ## API /api/zip
 
