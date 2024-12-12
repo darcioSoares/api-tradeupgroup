@@ -61,20 +61,17 @@ Formato de Saída: JSON
 Autenticação: Não é necessária.
 
 Exemplo de Requisição
-http
-Copiar código
+
 POST /api/zip HTTP/1.1
 Host: 127.0.0.1:8000
 Content-Type: application/json
-Accept: application/json
-Body:
+Accept: application/json  
 
+Body:
 json
-Copiar código
 {
     "cep": "23086780"
 }
-
 
 ## API /api/distance-value
 Endpoint: Calcular Distância entre CEPs
@@ -91,16 +88,14 @@ Formato de Saída: JSON
 Autenticação: Não é necessária.
 
 Exemplo de Requisição
-http
-Copiar código
+
 POST /api/distance-value HTTP/1.1
 Host: 127.0.0.1:8000
 Content-Type: application/json
 Accept: application/json
-Body:
 
+Body:
 json
-Copiar código
 {
     "cep_origin": "09866170",
     "cep_destination": "08664147"
