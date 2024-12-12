@@ -1,4 +1,4 @@
-# 📦 API Feira - Laravel 10
+# 📦 API - Laravel 10
 
 Bem-vindo à **API tradeupgroup**, um projeto desenvolvido em **Laravel 10** com foco na organização, padronização e boas práticas para a construção de APIs. 
 ---
@@ -9,6 +9,12 @@ link da api [shields.io](https://shields.io/)
 ## Sobre o Projeto
 
 A API Tradeupgroup é uma API desenvolvida para atender a diferentes tipos de operações de forma organizada e padronizada. O projeto segue recursos nativos do Laravel para manter o código limpo e de fácil leitura.
+
+## Configuraçoes
+segue key para acessar google maps, add ao .ENV
+que ira funcionar
+
+GOOGLE_MAPS_API_KEY=AIzaSyAelHWMczMbxGAHdMcJM00sNrP3VKaU4gc
 
 ### 📋 Principais Características:
 - **Laravel 10:** Framework robusto e moderno para o desenvolvimento backend.
@@ -37,18 +43,4 @@ A estrutura do projeto foi organizada com os seguintes objetivos:
 - Validar os dados de entrada utilizando **Form Requests**.
 - Garantir respostas consistentes com **API Resources**.
 
-### 📂 Estrutura do Projeto
-```plaintext
-app/
-├── Http/
-│   ├── Controllers/            # Controladores responsáveis pelas requisições
-│   │   ├── Api/
-│   │   │   ├── DistanceController.php
-│   │   │   └── ...
-│   ├── Requests/               # Validação com Form Requests
-│   │   └── CalculateDistanceRequest.php
-│   ├── Resources/              # API Resources para formatação de respostas
-│       └── DistanceCostResource.php
-├── Services/                   # Lógica de negócio centralizada
-│   └── GoogleMapsService.php
-└── ...
+
