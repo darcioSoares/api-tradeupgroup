@@ -14,10 +14,7 @@ class GoogleMapsService
     }
 
     public function getAddressData(string $cep)
-    {
-
-        dd($this->apiKey); 
-        
+    {        
         $url = "https://maps.googleapis.com/maps/api/geocode/json";
         $response = Http::get($url, [
             'address' => $cep,
@@ -48,17 +45,16 @@ class GoogleMapsService
         return $angle * $earthRadius;
     }
 
-    public function calculateCostAndDistance(string $cep1, string $cep2): array
+    public function calculateCostAndDistance(string $cep_origin, string $cep_destination): array
     {
       
-        $data1 = $this->getAddressData($cep1);
-        $data2 = $this->getAddressData($cep2);
+        $data1 = $this->getAddressData($cep_origin);
+        $data2 = $this->getAddressData($cep_destination);
 
         if ($data1['status'] !== 'OK' || $data2['status'] !== 'OK') {
             throw new \Exception('Failed to retrieve location data for one or both CEPs');
         }
 
-        //coordenadas dos endereços
         $location1 = $data1['results'][0]['geometry']['location'];
         $location2 = $data2['results'][0]['geometry']['location'];
     
@@ -68,8 +64,8 @@ class GoogleMapsService
         $cost = $distance * 1.0;
 
         return [
-            'distance' => $distance,
-            'cost' => $cost,
+            'distance_km' => round($distance, 4),
+            'cost' => round($cost, 2),
         ];
     }
 }
