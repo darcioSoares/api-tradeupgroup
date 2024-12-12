@@ -8,7 +8,6 @@ class ConsultZipCodeService
 {
     public function getZipCodeData(string $zipCode): array
     {
-        //return $zipCode;
 
         $url = "https://viacep.com.br/ws/{$zipCode}/json/";
 
