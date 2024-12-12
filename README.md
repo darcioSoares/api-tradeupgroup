@@ -4,7 +4,7 @@ Bem-vindo à **API tradeupgroup**, um projeto desenvolvido em **Laravel 10** com
 ---
 
 ## 🚀 Link do Projeto API
-link da api [shields.io](https://shields.io/)
+link da api [tradeupgroup-api](https://tradeupgroup.simples-envio.com/)
 
 ## Sobre o Projeto
 
@@ -16,7 +16,7 @@ que ira funcionar
 
 GOOGLE_MAPS_API_KEY=AIzaSyAelHWMczMbxGAHdMcJM00sNrP3VKaU4gc
 
-### 📋 Principais Características:
+## 📋 Principais Características:
 - **Laravel 10:** Framework robusto e moderno para o desenvolvimento backend.
 - **Controllers:** Responsáveis por receber as requisições e encaminhá-las para os serviços.
 - **Form Requests:** Utilizados para validar as requisições, garantindo que os dados recebidos sejam confiáveis e deixando os controllers mais limpos.
@@ -44,3 +44,41 @@ A estrutura do projeto foi organizada com os seguintes objetivos:
 - Garantir respostas consistentes com **API Resources**.
 
 
+# API Documentation
+
+## API /api/zip
+
+Endpoint: Consultar CEP
+Este endpoint permite consultar informações relacionadas a um CEP.
+
+URL: /api/zip
+Método HTTP: POST
+Formato de Entrada: JSON
+Formato de Saída: JSON
+Autenticação: Não é necessária.
+
+POST /api/zip HTTP/1.1
+Host: 127.0.0.1:8000
+Content-Type: application/json
+Accept: application/json
+
+{
+    "cep": "23086780"
+}
+
+
+## API /api/distance-value
+
+Endpoint: Calcular Distância entre CEPs
+Este endpoint permite calcular a distância entre dois CEPs.
+
+URL: /api/distance-value
+Método HTTP: POST
+Formato de Entrada: JSON
+Formato de Saída: JSON
+Autenticação: Não é necessária.
+
+{
+	"cep_origin": "09866170",
+	"cep_destination": "08664147"
+}
